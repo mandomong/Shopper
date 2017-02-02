@@ -22,24 +22,24 @@ public class IndexController {
 		
 		System.out.println("[Server] : index Page ");
 		
+		ModelAndView mav = new ModelAndView();
 		Criteria cri = new Criteria();
 	    cri.setStartNum(1);
 	    cri.setEndNum(4);
 	    
 	    List<InventoryItemVO> result1;
 	    result1 = service.listBeetween(cri);
+	    mav.addObject("result1", result1);
 	    
 	    cri.setStartNum(5);
-	    cri.setStartNum(8);
+	    cri.setEndNum(8);
+	    
 	    
 	    List<InventoryItemVO> result2;
 	    result2 = service.listBeetween(cri);
-	    
-	    
-	    ModelAndView mav = new ModelAndView();
-	    
-	    mav.addObject("result1", result1);
 	    mav.addObject("result2", result2);
+	    
+	    
 	    mav.setViewName("index");
 	    
 	    return mav;
