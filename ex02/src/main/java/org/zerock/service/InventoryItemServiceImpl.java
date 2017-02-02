@@ -24,6 +24,11 @@ public class InventoryItemServiceImpl implements InventoryItemService{
 	public List<InventoryItemVO> listBeetween(Criteria cri) throws Exception {
 		return dao.listBeetween(cri);
 	}
+
+	@Override
+	public InventoryItemVO read(String itemno) throws Exception {
+		return dao.read(itemno);
+	}
 	
 
 }

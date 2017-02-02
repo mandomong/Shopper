@@ -8,7 +8,7 @@ import org.zerock.domain.InventoryItemVO;
 public interface InventoryItemDAO {
 	
 	// select one
-	public InventoryItemVO read(String itemName) throws Exception;
+	public InventoryItemVO read(String itemno) throws Exception;
 	
 	// select list
 	public List<InventoryItemVO> listAll() throws Exception;

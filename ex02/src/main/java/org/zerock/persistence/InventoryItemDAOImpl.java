@@ -18,9 +18,8 @@ public class InventoryItemDAOImpl implements InventoryItemDAO{
 	private static String namespace = "org.zerock.mapper.InventoryItemMapper";
 	
 	@Override
-	public InventoryItemVO read(String itemName) throws Exception {
-		
-		return null;
+	public InventoryItemVO read(String itemno) throws Exception {
+		return session.selectOne(namespace + ".read", itemno);
 	}
 
 	@Override

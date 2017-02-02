@@ -6,6 +6,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.zerock.mapper.InventoryItemMapper">
 
+ <select id="read" resultType="org.zerock.domain.InventoryItemVO">
+ select 
+   invenitemnum, title, categor, price, registerdate, manufacturer, url, description
+ from 
+   inventoryitem 
+ where invenitemnum = #{itemno}
+ </select>
+
  <select id="listAll" resultType="org.zerock.domain.InventoryItemVO">
  <![CDATA[
  select 
