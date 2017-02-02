@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.zerock.domain.Criteria;
 import org.zerock.domain.InventoryItemVO;
 import org.zerock.persistence.InventoryItemDAO;
 
@@ -20,8 +21,8 @@ public class InventoryItemServiceImpl implements InventoryItemService{
 	}
 	
 	@Override
-	public List<InventoryItemVO> listMain() throws Exception {
-		return dao.listMain();
+	public List<InventoryItemVO> listBeetween(Criteria cri) throws Exception {
+		return dao.listBeetween(cri);
 	}
 	
 

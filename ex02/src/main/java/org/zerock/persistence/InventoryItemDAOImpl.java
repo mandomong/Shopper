@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.zerock.domain.Criteria;
 import org.zerock.domain.InventoryItemVO;
 
 @Repository
@@ -28,8 +29,10 @@ public class InventoryItemDAOImpl implements InventoryItemDAO{
 		return session.selectList(namespace + ".listAll");
 	}
 	
-	public List<InventoryItemVO> listMain() throws Exception {
-		return session.selectList(namespace + ".listMain");
+	public List<InventoryItemVO> listBeetween(Criteria cri) throws Exception {
+		System.out.println(cri.getStartNum());
+		System.out.println(cri.getEndNum());
+		return session.selectList(namespace + ".listMain", cri);
 	}
 
 	@Override

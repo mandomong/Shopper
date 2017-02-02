@@ -141,7 +141,7 @@
 											<ul class="thumbnails">
 											
 											<!-- TODO : 반복문 돌려서 수정 -->
-											<c:forEach items="${result}" var="result">
+											<c:forEach items="${result1}" var="result">
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
@@ -157,38 +157,16 @@
 										</div>
 										<div class="item">
 											<ul class="thumbnails">
+											<c:forEach items="${result2}" var="result">
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="resources/themes/images/ladies/5.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$22.30</p>
+														<p><a href="product_detail.html"><img src="${result.url}" alt="" /></a></p>
+														<a href="product_detail.html" class="title">${result.title}</a><br/>
+														<a href="products.html" class="category">${result.manufacturer }</a>
+														<p class="price">${result.price }원</p>
 													</div>
 												</li>
-												<li class="span3">
-													<div class="product-box">
-														<p><a href="product_detail.html"><img src="resources/themes/images/ladies/6.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
-														<p class="price">$40.25</p>
-													</div>
-												</li>
-												<li class="span3">
-													<div class="product-box">
-														<p><a href="product_detail.html"><img src="resources/themes/images/ladies/7.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think water</a><br/>
-														<a href="products.html" class="category">World once</a>
-														<p class="price">$10.45</p>
-													</div>
-												</li>
-												<li class="span3">
-													<div class="product-box">
-														<p><a href="product_detail.html"><img src="resources/themes/images/ladies/8.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$35.50</p>
-													</div>
-												</li>
+											</c:forEach>	
 											</ul>
 										</div>
 									</div>

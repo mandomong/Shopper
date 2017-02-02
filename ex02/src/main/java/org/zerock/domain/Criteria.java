@@ -5,6 +5,9 @@ public class Criteria {
 	private int page;	
 	private int perPageNum;
 	
+	private int startNum;
+	private int endNum;
+	
 	public Criteria(){
 		this.page = 1;
 		this.perPageNum = 10;
@@ -46,10 +49,30 @@ public class Criteria {
 		return this.perPageNum;
 	}
 
+	public int getStartNum() {
+		return startNum;
+	}
+
+	public void setStartNum(int startNum) {
+		this.startNum = startNum;
+	}
+
+	public int getEndNum() {
+		return endNum;
+	}
+
+	public void setEndNum(int endNum) {
+		this.endNum = endNum;
+	}
+
 	@Override
 	public String toString() {
-		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + "]";
+		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + ", startNum=" + startNum + ", endNum=" + endNum
+				+ "]";
 	}
+	
+	
+
 }
 
 

@@ -17,12 +17,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  <select id="listMain" resultType="org.zerock.domain.InventoryItemVO">
  <![CDATA[
- select 
- 	invenitemnum, title, categor, price, registerdate, manufacturer, url, description 
- from 
- 	(select invenitemnum, title, categor, price, registerdate, manufacturer, url, description from INVENTORYITEM order by invenitemnum desc) 
- where 
- 	rownum <= 8	
+  select 
+  	invenitemnum, title, categor, price, registerdate, manufacturer, url, description 
+  from 
+	( select rownum rnum,invenitemnum, title, categor, price, registerdate, manufacturer, url, description from inventoryitem order by rnum desc )
+  where 
+  	rnum between #{startNum} and #{endNum}
  ]]>
  </select>
  

@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.zerock.domain.Criteria;
 import org.zerock.domain.InventoryItemVO;
 import org.zerock.service.InventoryItemService;
 
@@ -32,18 +33,23 @@ public class HomeController {
    * Simply selects the home view to render by returning its name.
    */
   @RequestMapping(value = "/", method = RequestMethod.GET)
-  public ModelAndView home(Locale locale, Model model) throws Exception{
+  public String home(Locale locale, Model model) throws Exception{
     //logger.info("[Server] : Welcome index Page");
-    System.out.println("[Server] : Welcome index Page");
+    System.out.println("[Server] : Welcome start Page");
+    
+    
+/*    Criteria cri = new Criteria();
+    cri.setStartNum(1);
+    cri.setEndNum(4);
     
     List<InventoryItemVO> resultMain;
-    resultMain = service.listMain();
+    resultMain = service.listBeetween(cri);
     
     ModelAndView mav = new ModelAndView();
     mav.setViewName("index");
     model.addAttribute("result", resultMain);
-    
-    return mav;
+*/    
+    return "redirect:/index";
   }
   
 }

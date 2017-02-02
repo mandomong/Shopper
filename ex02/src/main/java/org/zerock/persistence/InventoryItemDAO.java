@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import java.util.List;
 
+import org.zerock.domain.Criteria;
 import org.zerock.domain.InventoryItemVO;
 
 public interface InventoryItemDAO {
@@ -13,7 +14,7 @@ public interface InventoryItemDAO {
 	public List<InventoryItemVO> listAll() throws Exception;
 	
 	// select main
-	public List<InventoryItemVO> listMain() throws Exception;
+	public List<InventoryItemVO> listBeetween(Criteria cri) throws Exception;
 	
 	// select list using paging function
 	public List<InventoryItemVO> listPaging(int page) throws Exception;
