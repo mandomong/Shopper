@@ -41,7 +41,7 @@
 							<li><a href="#">My Account</a></li>
 							<li><a href="cart.html">Your Cart</a></li>
 							<li><a href="checkout.html">Checkout</a></li>
-							<li><a href="register.html">Login</a></li>
+							<li><a href="/register">Login</a></li>
 						</ul>
 					</div>
 				</div>
@@ -145,8 +145,8 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="${result.url}" alt="" /></a></p>
-														<a href="product_detail.html" class="title">${result.title }</a><br/>
+														<p><a href="item?itemno=${result.invenItemNum }"><img src="${result.url}" alt="" /></a></p>
+														<a href="item?itemno=${result.invenItemNum }" class="title">${result.title }</a><br/>
 														<a href="products.html" class="category">${result.manufacturer }</a>
 														<p class="price">${result.price }원</p>
 													</div>
@@ -160,8 +160,8 @@
 											<c:forEach items="${result2}" var="result">
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="${result.url}" alt="" /></a></p>
-														<a href="product_detail.html" class="title">${result.title}</a><br/>
+														<p><a href="item?itemno=${result.invenItemNum }"><img src="${result.url}" alt="" /></a></p>
+														<a href="item?itemno=${result.invenItemNum }" class="title">${result.title}</a><br/>
 														<a href="products.html" class="category">${result.manufacturer }</a>
 														<p class="price">${result.price }원</p>
 													</div>
@@ -210,13 +210,6 @@
 					<div class="span12">
 						<p class="logo"><img src="resources/themes/images/logo.png" class="site_logo" alt=""></p>
 						<p><h6>이 페이지는 신세계아이엔씨 2016년 하반기 공채 인턴들이 만든 화장품 쇼핑몰 페이지 입니다.</h6></p>
-						<br/>
-						<span class="social_icons">
-							<a class="facebook" href="#">Facebook</a>
-							<a class="twitter" href="#">Twitter</a>
-							<a class="skype" href="#">Skype</a>
-							<a class="vimeo" href="#">Vimeo</a>
-						</span>
 					</div>
 				</div>
 			</section>

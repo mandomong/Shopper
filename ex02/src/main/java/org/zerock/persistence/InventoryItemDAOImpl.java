@@ -1,6 +1,7 @@
 package org.zerock.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -18,9 +19,8 @@ public class InventoryItemDAOImpl implements InventoryItemDAO{
 	private static String namespace = "org.zerock.mapper.InventoryItemMapper";
 	
 	@Override
-	public InventoryItemVO read(String itemName) throws Exception {
-		
-		return null;
+	public InventoryItemVO read(String itemno) throws Exception {
+		return session.selectOne(namespace + ".read", itemno);
 	}
 
 	@Override
@@ -45,9 +45,14 @@ public class InventoryItemDAOImpl implements InventoryItemDAO{
 	@Override
 	public List<InventoryItemVO> listCategory(String category) throws Exception {
 
-		
 		return null;
 	}
+	
+	// TODO: jointest
+	@SuppressWarnings("unchecked")
+    public List<Map<String, Object>> getJoin(){
+        return (List)session.selectList(namespace+".jointest");
+    }
 
 	
 }

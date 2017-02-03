@@ -1,6 +1,7 @@
 package org.zerock.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -23,6 +24,16 @@ public class InventoryItemServiceImpl implements InventoryItemService{
 	@Override
 	public List<InventoryItemVO> listBeetween(Criteria cri) throws Exception {
 		return dao.listBeetween(cri);
+	}
+
+	@Override
+	public InventoryItemVO read(String itemno) throws Exception {
+		return dao.read(itemno);
+	}
+	
+	//Join test
+	public List<Map<String, Object>> jointest() throws Exception {
+		return dao.getJoin();
 	}
 	
 
