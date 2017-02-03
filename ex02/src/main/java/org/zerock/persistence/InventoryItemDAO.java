@@ -1,6 +1,7 @@
 package org.zerock.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import org.zerock.domain.Criteria;
 import org.zerock.domain.InventoryItemVO;
@@ -21,5 +22,7 @@ public interface InventoryItemDAO {
 	
 	// select list using category
 	public List<InventoryItemVO> listCategory(String category) throws Exception;
+	
+	public List<Map<String, Object>> getJoin();
 	
 }

@@ -1,5 +1,8 @@
 package org.zerock.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -16,8 +19,9 @@ public class ItemDetailController {
 	private InventoryItemService service;
 	
 	@RequestMapping("/item")
-	public ModelAndView itemListPage(@RequestParam("itemno") String itemno) throws Exception{
+	public ModelAndView itemListPage(@RequestParam(value = "itemno", required=false) String itemno, @RequestParam(value = "category", required=false) String category) throws Exception{
 		
+		if(itemno != null){
 		System.out.println("[Server] : productdetail Page");
 		
 		ModelAndView mav = new ModelAndView();
@@ -29,7 +33,21 @@ public class ItemDetailController {
 		mav.addObject("result", result);
 		mav.setViewName("productdetail");
 		return mav;
+		}else{
+			System.out.println("파라미터 없음");
+		}
+		return null;
 	}
+	
+	/*
+	@RequestMapping("/item/test")
+	public void itemListPage() throws Exception{
+		System.out.println("[Server] : item test");
+		
+		List<Map<String, Object>> result = service.jointest();
+		System.out.println(result.toString());
+	}
+	*/
 	
 	
 }
